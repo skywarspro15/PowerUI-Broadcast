@@ -1,0 +1,277 @@
+@font-face {
+  font-family: SegoeUIVariable;
+  src: url("fonts/Segoe-UI-Variable-Static-Display.ttf");
+}
+
+@font-face {
+  font-family: SegoeUIVariableBold;
+  src: url("fonts/Segoe-UI-Variable-Static-Display-Bold.ttf");
+}
+
+@font-face {
+  font-family: SegoeUIVariableLight;
+  src: url("fonts/Segoe-UI-Variable-Static-Display-Light.ttf");
+}
+
+@font-face {
+  font-family: SegoeUIVariableSemibold;
+  src: url("fonts/Segoe-UI-Variable-Static-Display-Semibold.ttf");
+}
+
+@font-face {
+  font-family: SegoeUIVariableSemilight;
+  src: url("fonts/Segoe-UI-Variable-Static-Display-Semilight.ttf");
+}
+
+html,
+body {
+  color-scheme: dark;
+  font-family: SegoeUIVariable;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 10px;
+  transition: all 500ms;
+}
+
+*:hover::-webkit-scrollbar {
+  width: 3px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(180, 180, 180);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(150, 150, 150);
+}
+
+.navContainer {
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(100px);
+  animation: slideDown 500ms;
+}
+
+ul.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+ul.navbar li.nav-item.left {
+  float: left;
+  text-align: center;
+  padding: 10px;
+  vertical-align: middle;
+  line-height: normal;
+}
+
+ul.navbar li.nav-item.right {
+  float: right;
+  text-align: center;
+  padding: 10px;
+  vertical-align: middle;
+  line-height: normal;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+  vertical-align: middle;
+  line-height: normal;
+}
+
+.button {
+  background-color: rgb(255, 255, 255);
+  color: black;
+  border-radius: 5px;
+  padding: 10px;
+  padding-right: 15px;
+  padding-left: 15px;
+  font-size: 15px;
+  border: none;
+  font-family: SegoeUIVariableSemibold;
+  cursor: pointer;
+  transition: all 100ms;
+}
+
+button.button:hover {
+  background-color: #eee;
+}
+
+.bold {
+  font-family: SegoeUIVariableBold;
+  font-size: 20px;
+}
+
+.semibold {
+  font-family: SegoeUIVariableSemibold;
+  font-size: 18px;
+}
+
+.vcenter {
+  position: absolute;
+  top: 50%;
+  margin-top: -5%;
+  margin-left: 10px;
+  animation: slideLeft 500ms;
+}
+
+.title {
+  font-family: SegoeUIVariableSemibold;
+  font-size: 30px;
+  margin: 0;
+}
+
+.subtitle {
+  font-family: SegoeUIVariable;
+  font-size: 20px;
+  margin: 0;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(20px);
+  animation: fadeIn 500ms;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background: rgba(0, 0, 0, 0.85);
+  animation: slideDown 500ms;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px rgb(25, 25, 25) solid;
+  width: 80%;
+  transition: all 0.5s;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal.active {
+  display: block;
+  animation: fadeIn 500ms;
+}
+
+.clipped {
+  overflow: hidden;
+}
+
+input {
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  padding: 5px;
+  font-family: SegoeUIVariable;
+}
+
+@media only screen and (max-width: 600px) {
+  ul.navbar li.nav-item.right {
+    float: left;
+    text-align: center;
+    padding: 10px;
+    vertical-align: middle;
+    line-height: normal;
+  }
+
+  .modal-content {
+    background: rgba(0, 0, 0, 0.85);
+    animation: slideDown 500ms;
+    margin: 0 auto;
+    border-radius: 5px;
+    border: 1px rgb(25, 25, 25) solid;
+    width: 95%;
+    height: 420vh;
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-250px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transsform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-250px);
+    opacity: 0;
+  }
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(-250px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(-250px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

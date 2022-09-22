@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="tranchui-latest.css" />
+    <style>
+      html,
+      body {
+        overflow-x: hidden;
+      }
+    </style>
+    <title>PowerUI Broadcast</title>
+  </head>
+  <body>
+    <div class="navContainer">
+      <ul class="navbar">
+        <li class="nav-item left"><a class="semibold">PowerUI Broadcast</a></li>
+        <li class="nav-item left"><a>Connect</a></li>
+        <li class="nav-item left"><a>Stream</a></li>
+      </ul>
+    </div>
+    <video
+      id="recv"
+      autoplay="true"
+      width="854"
+      height="480"
+      style="
+        margin-left: 10px;
+        position: absolute;
+        top: 50%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        width: 50%;
+        height: 50%;
+      "
+    ></video>
+    <button
+      class="button"
+      style="
+        margin-right: 10px;
+        position: absolute;
+        top: 24%;
+        left: 80%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        float: right;
+      "
+      onclick="openModal('streamDetails')"
+    >
+      Start streaming
+    </button>
+    <p
+      id="status"
+      class="semibold"
+      style="
+        margin-right: 10px;
+        position: absolute;
+        top: 50%;
+        left: 80%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        height: 50%;
+        width: 30%;
+        float: right;
+      "
+    >
+      Stream status: Not started
+    </p>
+    <p
+      class="semibold"
+      style="
+        margin-right: 10px;
+        position: absolute;
+        top: 55%;
+        left: 80%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        height: 50%;
+        width: 30%;
+        float: right;
+      "
+    >
+      Logs:
+    </p>
+    <p
+      id="logs"
+      style="
+        margin-right: 10px;
+        position: absolute;
+        top: 60%;
+        left: 80%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        height: 50%;
+        width: 30%;
+        float: right;
+      "
+    ></p>
+    <div class="modal clipped" id="streamDetails">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p class="title">Start a stream<br /></p>
+        <p class="subtitle">
+          Start broadcasting for people to see.<br />
+          <br />
+        </p>
+        <p class="subtitle">Stream name</p>
+        <br />
+        <input type="text" placeholder="Stream name" id="streamName" /> <br />
+        <br />
+        <button class="button" onclick="startStream()">Start stream</button>
+      </div>
+    </div>
+  </body>
+  <script src="https://unpkg.com/peerjs@1.3.2/dist/peerjs.min.js"></script>
+  <script src="tranchui.js"></script>
+  <script src="script.js"></script>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="tranchui-latest.css" />
+  <title>PowerUI Broadcast</title>
+</head>
+
+<body>
+  <div class="navContainer">
+    <ul class="navbar">
+      <li class="nav-item left">
+        <a class="semibold" href="index.html">PowerUI Broadcast</a>
+      </li>
+      <li class="nav-item left">
+        <a href="javascript: openModal('streamDetails')">Connect</a>
+      </li>
+      <li class="nav-item left"><a href="stream.html">Stream</a></li>
+    </ul>
+  </div>
+  <video id="recv" autoplay="true" width="854" height="480" style="
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        width: 70%;
+        height: 70%;
+      "></video>
+  <button id="click" class="button" onclick="reconnectStream();" style="margin: 0;
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);">Blank video?</button>
+  <div class="modal clipped" id="streamDetails">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p class="title">Watch a stream<br /></p>
+      <p class="subtitle">
+        View the stream by inserting a channel ID.<br />
+        <br />
+      </p>
+      <p class="subtitle">Channel ID</p>
+      <br />
+      <input type="text" placeholder="Stream name" id="channelID" /> <br />
+      <br />
+      <button class="button"
+        onclick="window.location.href = '/connect.html?channelId=' + document.getElementById('channelID').value;">
+        Start stream
+      </button>
+    </div>
+  </div>
+</body>
+<script src="https://unpkg.com/peerjs@1.3.2/dist/peerjs.min.js"></script>
+<script src="tranchui.js"></script>
+<script src="script.js"></script>
+<script>
+  viewStream();
+</script>
+
+</html>
